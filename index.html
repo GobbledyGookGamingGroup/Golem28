@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOLEM28 | A Skirmish Kitbasher</title>
+    <style>
+        /* CSS Variables for the High-Contrast Vibe */
+        :root {
+            --bg-color: #050505; /* Near black */
+            --text-main: #fbe6d4; /* Pale peach/bone */
+            --accent-purple: #a800b0; /* From miasma.jpg */
+            --accent-yellow: #feca00; /* From miasma.jpg / statue dude.jpg */
+            --accent-orange: #f26522; /* From golem cover.jpg */
+            --accent-red: #b30000; /* From statue dude.jpg */
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Space Mono', monospace;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Brutalist / Zine Typography */
+        h1, h2, h3 {
+            font-family: 'Cinzel', serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            color: var(--bg-color);
+            -webkit-text-stroke: 2px var(--text-main);
+            text-align: center;
+            margin-bottom: 0.2em;
+            text-shadow: 4px 4px 0px var(--accent-orange);
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--accent-yellow);
+            border-bottom: 2px solid var(--accent-purple);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 0 2rem 0;
+            border-bottom: 4px solid var(--text-main);
+            margin-bottom: 3rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--accent-orange);
+            font-weight: bold;
+            letter-spacing: 4px;
+        }
+
+        /* Image Styling */
+        .hero-image-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .hero-image {
+            max-width: 100%;
+            height: auto;
+            border: 4px solid var(--accent-yellow);
+            box-shadow: 8px 8px 0px var(--accent-purple);
+            filter: contrast(120%) saturate(120%);
+        }
+
+        .split-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .split-images img {
+            width: 100%;
+            height: auto;
+            border: 2px solid var(--text-main);
+            filter: grayscale(20%) contrast(150%);
+        }
+
+        /* Text Content */
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .highlight {
+            color: var(--accent-yellow);
+            font-weight: bold;
+        }
+
+        /* Navigation Hub for GitHub Pages */
+        .nav-hub {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .nav-card {
+            background-color: transparent;
+            border: 2px solid var(--accent-red);
+            padding: 2rem;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: all 0.2s ease-in-out;
+            position: relative;
+        }
+
+        .nav-card::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: -5px;
+            bottom: -5px;
+            background-color: var(--accent-red);
+            z-index: -1;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .nav-card:hover {
+            transform: translate(-3px, -3px);
+            color: var(--bg-color);
+            background-color: var(--accent-yellow);
+            border-color: var(--accent-yellow);
+        }
+
+        .nav-card:hover::before {
+            background-color: var(--accent-purple);
+            top: 8px;
+            left: 8px;
+            right: -8px;
+            bottom: -8px;
+        }
+
+        .nav-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            margin-top: 5rem;
+            text-align: center;
+            border-top: 1px dashed var(--text-main);
+            padding-top: 2rem;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        @media (max-width: 600px) {
+            .split-images {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                text-shadow: 2px 2px 0px var(--accent-orange);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>GOLEM28</h1>
+            <div class="subtitle">A SKIRMISH KITBASHER</div>
+        </header>
+
+        <div class="hero-image-container">
+            <img src="golem cover.jpg" alt="Golem28 Cover Art" class="hero-image">
+        </div>
+
+        <section id="about">
+            <h2>The Simulacrum Awakens</h2>
+            <p>
+                <span class="highlight">Golem28</span> is a tactical skirmish kitbasher wargame where players must carefully plan their actions, bet on successful outcomes, and destroy their enemies. The game takes place in a dark fantasy world full of woes, tragedies, and misfortune.
+            </p>
+            <p>
+                In this game, you do not just command an army; you build a "simulacrum" led by an Animator, supported by the terrifying golems they have brought to life, and accompanied by other followers. The animator is the true mastermind and the only unit capable of issuing commands to their golems, hulking monstrosities that possess no actions of their own.
+            </p>
+            <p>
+                At its core, Golem28 celebrates the hobbyist. Golems can be crafted and kitbashed from anything, old DnD minis, thrift store figurines, or literal trash. Animators and followers can be any 28mm minis you have from adjacent fantasy games.
+            </p>
+        </section>
+
+        <div class="split-images">
+            <img src="miasma.jpg" alt="A purple screaming monument against a toxic yellow sky">
+            <img src="statue dude.jpg" alt="A blue silhouette looking upon a yellow decayed statue head">
+        </div>
+
+        <section id="hub">
+            <h2>The Tools of Creation</h2>
+            <p>Access the core systems and mechanics required to bring your abominations to life. <em>(Links point to separate GitHub Repositories)</em></p>
+            
+            <div class="nav-hub">
+                <a href="/simulacrum-builder" class="nav-card">
+                    <h3>Simulacrum Builder</h3>
+                    <p>Draft your Animators, Follower, and Golems. Calculate Worth and assign Souls.</p>
+                </a>
+                
+                <a href="/rules" class="nav-card">
+                    <h3>The Primer</h3>
+                    <p>Digital Core Rules, Mechanics, and Bouts.</p>
+                </a>
+
+                <a href="/lore" class="nav-card">
+                    <h3>The World</h3>
+                    <p>Aether, Ichor, Empyrean, Ozone, Urania, and Ylem.</p>
+                </a>
+            </div>
+        </section>
+
+        <footer>
+            <p>From ash to ash and dust to dust. A god of things sits and rusts.</p>
+            <p>&copy; 2026 Golem28 by GobbledyGookGamingGroup.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
